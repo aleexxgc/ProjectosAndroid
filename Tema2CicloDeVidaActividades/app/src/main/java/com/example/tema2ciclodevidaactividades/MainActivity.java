@@ -1,12 +1,7 @@
 package com.example.tema2ciclodevidaactividades;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,37 +11,45 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Log.i("Ejemplo", "Estoy en on create");
     }
 
-    protected void onStart(){
+    @Override
+    protected void onStart() {
         super.onStart();
         Log.i("Ejemplo", "Estoy en on Start");
-    };
+    }
 
-    protected void onRestart(){
+    @Override
+    protected void onRestart() {
         super.onRestart();
         Log.i("Ejemplo", "Estoy en on Restart");
-    };
+    }
 
-    protected void onResume(){
+    @Override
+    protected void onResume() {
         super.onResume();
         Log.i("Ejemplo", "Estoy en on Resume");
-    };
+    }
 
-    protected void onPause(){
+    @Override
+    protected void onPause() {
         super.onPause();
         Log.i("Ejemplo", "Estoy en on Pause");
-    };
+    }
 
-    protected void onStop(){
+    @Override
+    protected void onStop() {
         super.onStop();
         Log.i("Ejemplo", "Estoy en on Stop");
-    };
+    }
 
-    protected void onDestroy(){
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
-        Log.i("Ejemplo", "Estoy en Destroy");
-    };
+        Log.i("Ejemplo", "Estoy en on Destroy");
+        Intent ejemplo = new Intent(this, MainActivity2.class);
+        startActivity(ejemplo);
+    }
 }
+
